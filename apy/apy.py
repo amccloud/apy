@@ -53,9 +53,9 @@ class Apy(object):
         response = requests.get(url, params=kwargs)
 
         if not 200 <= response.status_code < 300:
-            raise ApyValidationException(response.json)
+            raise ValidationException(response.json)
 
         return response.json
 
-class ApyValidationException(Exception):
+class ValidationException(Exception):
     pass

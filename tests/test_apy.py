@@ -1,6 +1,6 @@
 import unittest
 from apy import Apy as _Apy
-from apy import ApyValidationException
+from apy import ValidationException
 from apy.utils import *
 
 class Apy(_Apy):
@@ -50,6 +50,6 @@ class ApyTestCase(unittest.TestCase):
         })
 
     def test_validation(self):
-        with self.assertRaises(ApyValidationException):
+        with self.assertRaises(ValidationException):
             zappos = _Apy('http://api.zappos.com/')
             zappos.search(term='zombie')
